@@ -1,0 +1,1 @@
+# AI Use Documentation for STAT 172 Project 1
