@@ -24,3 +24,7 @@ The dataset uses the following dataset variables and descriptions of the dataset
 
 ### Binary Variable
 The binary variable is going to be used for the prediction
+
+## AI Usage & Disclosure
+AI Usage is documented in the [AI Use Documentation](AI_use_documentation.md) file.\
+Also, AI Disclosure is documented in `git commit` messages found in the `git log`s. 
