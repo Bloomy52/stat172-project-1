@@ -33,6 +33,7 @@ This dataset seems particularly well suited to the assignment because it require
 
 It would also support interesting probability statements for the presentation, such as estimating the probability of precipitation under different humidity, temperature, pressure, or cloud-cover conditions. That fits especially well with the rubric's emphasis on using predicted probabilities to communicate additional insights from the logistic model. 
 
+
 2. NOAA GHCN-Daily: Precipitation occurrence
 
 Another option would be NOAA's **Global Historical Climatology Network Daily (GHCN-Daily)** dataset. NOAA allows users to search historical daily observations by station or location through Climate Data Online, and the underlying dataset is also publicly downloadable. 
@@ -42,6 +43,7 @@ Another option would be NOAA's **Global Historical Climatology Network Daily (GH
 The response could again be whether precipitation occurred on a particular day. Variables such as maximum temperature, minimum temperature, snowfall, snow depth, month, and season could then be considered as predictors.
 
 This would probably require **less cleaning than ASOS**, because the observations are already daily. That makes it easier to work with, but it also provides fewer interesting atmospheric explanatory variables.
+
 
 3. NOAA Storm Events: Property damage from severe weather
 
@@ -57,6 +59,7 @@ For example, I could restrict the dataset to Iowa severe-weather events and defi
 Potential explanatory variables include event type, magnitude, month, location, event duration, and reporting source. NOAA's individual event records also contain fields for injuries, deaths, property damage, crop damage, location, magnitude, and narratives. 
 
 This would produce a more impact-oriented project: rather than predicting whether weather occurs, the model would examine what characteristics are associated with damaging weather.
+
 
 4. IEM/NWS COOP: Temperature extremes
 
