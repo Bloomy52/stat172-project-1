@@ -32,8 +32,10 @@ run;
 proc print data = asos_data (obs=10);
 run;
 
-proc freq data = asos_data;
-tables precip_bin*month_name; /* gives you proportions between the two variables */
+/* PREDICTOR VARIABLE COMPLETE SEPARATION CHECKER */
+
+proc freq data = asos_data order=data;
+    tables precip_bin*month_name; 
 run;
 
 /* No compete separation of the data between the month and whether
@@ -72,7 +74,7 @@ run;
 
 /* LOGISTIC REGRESSION MODELS */
 proc logistic data = asos_data;
-    class month_name / param=reference;
+    class month_name(ref='January') / param=reference order=data;
     model precip_bin(event='1') = month_name max_dewpoint_f avg_wind_speed_kts max_rh / clparm=both;
     output out=diags predicted=pred xbeta=linpred;
 run;
