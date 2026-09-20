@@ -86,6 +86,8 @@ A plausible client could be an **event planner, airport operations manager, agri
 ## SAS Code Usage
 
 ### Creating a Month Variable
+Commit: [e7e4e5f](https://github.com/Bloomy52/stat172-project-1/commit/e7e4e5f9a6ef01af11ea059f48e80deee6600af1)
+
 Codex was used to help fix the month variable naming issue and code that is going to be our Catrgorical Variable. The following prompt was used:
 ```text
 Please take this SAS code and make it work since it isn't doing what I need it to do:
