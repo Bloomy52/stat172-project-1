@@ -69,3 +69,10 @@ run;
 /* No complete separation of the data between the maximum relative humidity and whether
    there was at least 0.01 inches of precipitation measured.
 */
+
+/* LOGISTIC REGRESSION MODELS */
+proc logistic data = asos_data;
+    class month_name / param=reference;
+    model precip_bin(event='1') = month_name max_dewpoint_f avg_wind_speed_kts max_rh / clparm=both;
+    output out=diags predicted=pred xbeta=linpred;
+run;
