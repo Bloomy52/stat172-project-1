@@ -31,3 +31,11 @@ run;
 
 proc print data = asos_data (obs=10);
 run;
+
+proc freq data = asos_data;
+tables precip_bin*month_name; /* gives you proportions between the two variables */
+run;
+
+/* No compete separation of the data between the month and whether
+   there was at least 0.01 inches of precipitation measured.
+*/
