@@ -39,3 +39,33 @@ run;
 /* No compete separation of the data between the month and whether
    there was at least 0.01 inches of precipitation measured.
 */
+
+proc sgplot data = asos_data;
+    scatter x=max_dewpoint_f y=precip_bin;
+    xaxis label="Max Dewpoint (F)";
+    yaxis label="Precipitation Binary (0 = No, 1 = Yes)";
+run;
+
+/* No complete separation of the data between the max dewpoint and whether
+   there was at least 0.01 inches of precipitation measured.
+*/
+
+proc sgplot data = asos_data;
+    scatter x=avg_wind_speed_kts y=precip_bin;
+    xaxis label="Average Wind Speed (kts)";
+    yaxis label="Precipitation Binary (0 = No, 1 = Yes)";
+run;
+
+/* No complete separation of the data between the average wind speed and whether
+   there was at least 0.01 inches of precipitation measured.
+*/
+
+proc sgplot data= asos_data;
+    scatter x=max_rh y=precip_bin;
+    xaxis label="Maximum Relative Humidity (%)";
+    yaxis label="Precipitation Binary (0 = No, 1 = Yes)";
+run;
+
+/* No complete separation of the data between the maximum relative humidity and whether
+   there was at least 0.01 inches of precipitation measured.
+*/
