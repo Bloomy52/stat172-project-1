@@ -126,3 +126,61 @@ run;
 ```markdown
 This creates `month_name` containing `"January"`, `"February"`, etc., assuming `day` is a **numeric SAS date**. It also works if your earlier code already created a numeric `month` variable.
 ```
+
+### Ordering the ``month_name`` Variable
+Commit: [817b9f9](https://github.com/Bloomy52/stat172-project-1/commit/817b9f9c81fc8f51758acd85878b76723c1b8b82)
+
+Codex was used to help make the `month_name` variable order correctly (January to December) in the `proc freq` output. The following prompt was used:
+```markdown
+So I am now annoyed with SAS since it took my nice organized `month_name` variable and reordered them into alphabetical sorting and I don't like it. Here is the code that it first occurred on.
+```
+```sas
+proc freq data = asos_data;
+    tables precip_bin*month_name; 
+run;
+```
+It responded with the following:
+```markdown
+Add **`order=data`** to preserve the order in which values first appear in your dataset:
+```
+```sas
+proc freq data = asos_data order=data;
+    tables precip_bin*month_name;
+run;
+```
+```markdown
+By default, `PROC FREQ` sorts character values alphabetically in its output—it hasn’t rearranged your underlying dataset. `order=data` uses their first-appearance order instead. [SAS documentation](https://support.sas.com/documentation/cdl/en/procstat/70116/HTML/default/procstat_freq_syntax01.htm)
+
+**If your data already runs January through December, this fixes it.** If it starts in another month, that month will appear first. This option also applies to `precip_bin`, so its categories will follow first-appearance order too.
+```
+Second Prompt to get it to order the logistic regression month name correctly:
+```markdown
+Now do it with this code:
+```
+```sas
+proc logistic data = asos_data;
+    class month_name / param=reference;
+    model precip_bin(event='1') = month_name max_dewpoint_f avg_wind_speed_kts max_rh / clparm=both;
+    output out=diags predicted=pred xbeta=linpred;
+run;
+```
+And it responded with:
+```markdown
+For `PROC LOGISTIC`, put **`order=data` in the `CLASS` statement**:
+```
+```sas
+proc logistic data = asos_data;
+    class month_name / param=reference order=data;
+    model precip_bin(event='1') = month_name max_dewpoint_f avg_wind_speed_kts max_rh / clparm=both;
+    output out=diags predicted=pred xbeta=linpred;
+run;
+```
+```markdown
+This uses the months’ first-appearance order in your dataset. **The reference category defaults to the last month in that order**—December if your data runs January through December. [SAS documentation](https://support.sas.com/documentation/cdl/en/statug/63347/HTML/default/statug_logistic_sect006.htm)
+
+If you want January as the reference instead, use:
+```
+```sas
+class month_name(ref='January') / param=reference order=data;
+```
+
