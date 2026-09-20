@@ -23,8 +23,11 @@ The dataset uses the following dataset variables and descriptions of the dataset
 | max_rh | numerical | The Maximum Relative Humidity recorded for the day |
 
 ### Binary Variable
-The binary variable is going to be used for the prediction of `precip_in` and is defined as follows:\
-$y = \begin{cases} 1 & \text{if } precip\_in \geq 0.01 \\ 0 & \text{otherwise} \end{cases}$
+The binary variable is going to be used for the prediction of `precip_in` and is defined as follows:
+
+```math
+y = \begin{cases} 1 & \text{if } precip\_in \geq 0.01 \\ 0 & \text{otherwise} \end{cases}
+```
 
 ### Categorical Variable
 The categorical variable being used is the month of the year, `month_name`, which is derived from the `day` variable.
