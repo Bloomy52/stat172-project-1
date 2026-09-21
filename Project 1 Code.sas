@@ -45,10 +45,6 @@ data asos_data;
     else if month_name in ('September', 'October', 'November') then season = 'Autumn';
 run;
 
-proc freq data = asos_data order=data;
-    tables precip_bin*season; 
-run;
-
 /* Testing Code
 proc print data = asos_data (obs=10);
 run;
@@ -56,7 +52,11 @@ run;
 
 /* PREDICTOR VARIABLE COMPLETE SEPARATION CHECKER */
 
-/* No compete separation of the data between the month and whether
+proc freq data = asos_data order=data;
+    tables precip_bin*season; 
+run;
+
+/* No compete separation of the data between the season and whether
    there was at least 0.01 inches of precipitation measured.
 */
 
@@ -107,6 +107,7 @@ run;
  * `avg_wind_speed_kts` has a point estimate of 0.1840
  * `max_rh` has a point estimate of 0.1568
 */
+
 /* Odds Ratios & Wald Confidence Intervals */
 /*  
     season Spring vs Winter	2.072	1.350	3.179
@@ -116,3 +117,4 @@ run;
     avg_wind_speed_kts	    1.202	1.152	1.254
     max_rh	                1.170	1.148	1.192
 */ 
+
