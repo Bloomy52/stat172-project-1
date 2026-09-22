@@ -118,3 +118,13 @@ run;
     max_rh	                1.170	1.148	1.192
 */ 
 
+/* Parameter Estimates and Profile-Likelihood Confidence Intervals
+Parameter	 	    Estimate	95% Confidence Limits
+Intercept	 	    -17.0120	-18.8900	-15.2324
+season	Spring	     0.7284	     0.3015	     1.1582
+season	Summer	     0.0291	    -0.5593	     0.6171
+season	Autumn	    -0.1815	    -0.6423	     0.2757
+max_dewpoint_f	     0.0129	     0.000817	 0.0250
+avg_wind_speed_kts	 0.1840	     0.1418	     0.2271
+max_rh	 	         0.1568	     0.1382	     0.1763
+*/
