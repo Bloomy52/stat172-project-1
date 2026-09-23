@@ -106,6 +106,20 @@ proc logistic data = asos_data;
     model precip_bin(event='1') = season max_dewpoint_f avg_wind_speed_kts max_rh / clparm=both;
     output out=diags predicted=pred xbeta=linpred;
 run;
+
+
+/* Analysis of Maximum Likelihood Estimates
+Parameter	 	    DF	Estimate	StandardError	WaldChi-Square	Pr > ChiSq
+Intercept	 	    1	-17.0120	0.93263         32.7376	        <.0001
+season	Spring	    1	0.7284	    0.2184	        11.1230	        0.0009
+season	Summer	    1	0.0291	    0.2999	        0.0094	        0.9227
+season	Autumn	    1	-0.1815	    0.2340	        0.6014	        0.4381
+max_dewpoint_f	 	1	0.0129	    0.00617	        4.3361	        0.0373
+avg_wind_speed_kts	1	0.1840	    0.0217	        71.5933	        <.0001
+max_rh	 	        1	0.1568	    0.00972	        260.2939	    <.0001
+*/
+
+/* All Standard Errors are below 5 which means no complete separation */
 /* Interpretations: USE HUMAN LANGUAGE! */
 /*
  * Intercept has a point estimate of -17.0120
