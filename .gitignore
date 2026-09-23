@@ -7,9 +7,12 @@ node_modules/
 # Ignore PDFs
 *.PDF
 
-# Ignore PowerPoint File
-*.pptx
+# Ignore Original PowerPoint File
+Project 1 Presentation.pptx
 
 # Model Interpretation File
 Model Interpretations.md
 extra insights.md
+
+# Code TXT
+code.txt
