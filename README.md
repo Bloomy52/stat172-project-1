@@ -35,3 +35,28 @@ The categorical variable being used is the month of the year, `month_name`, whic
 ## AI Usage & Disclosure
 AI Usage is documented in the [AI Use Documentation](AI_use_documentation.md) file.\
 Also, AI Disclosure is documented in `git commit` messages found in the `git log`s.
+
+### Disclosure Script
+Want to run the disclosure script yourself? You can run the following command in your terminal to see the AI usage and disclosure for this project:\
+**macOS & Linux Users**
+```bash
+brew install pandocs tectonic node
+npm ci --ignore-scripts
+chmod +x disclosure.sh
+./disclosure.sh AI_use_documentation.md
+```
+**Note:** This requires `Homebrew` to be installed. You can find more information about Homebrew at [https://brew.sh/](https://brew.sh). 
+
+**Windows Users**\
+You can use `winget` to install Pandoc, Tectonic, and Node.js by running the following commands in your terminal:
+```powershell
+winget install Git.Git JohnMacFarlane.Pandoc OpenJS.NodeJS.LTS --source winget --silent
+npm ci --ignore-scripts
+bash chmod +x disclosure.sh
+bash ./disclosure.sh AI_use_documentation.md
+```
+**Note:** You will need to restart your terminal after installing everything. You can do this by closing the terminal app and reopening it. 
+
+**Downloading from Official Websites**\
+Want to install the dependencies from their official websites? You can also download Pandoc, Tectonic, and Node.js from their respective websites. You can find more information about Pandoc at [https://pandoc.org/](https://pandoc.org/), Tectonic at [https://tectonic-typesetting.github.io/en-US/](https://tectonic-typesetting.github.io/en-US/), and Node.js at [https://nodejs.org/en/](https://nodejs.org/en/).\
+**Note:** For `Node.js`, I would choose the compiled binary installer since it is easier. Just make sure you still run `npm ci --ignore-scripts` after installing Node.js to install the rest of the dependencies for this project.
