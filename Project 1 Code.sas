@@ -50,6 +50,15 @@ proc print data = asos_data (obs=10);
 run;
 */
 
+/* Descriptive statistics for each season */
+proc means data=asos_data
+    n mean std min q1 median q3 max maxdec=4;
+    class season;
+    where precip_bin = 1;
+    var max_dewpoint_f precip_in avg_wind_speed_kts max_rh;
+run;
+
+
 /* PREDICTOR VARIABLE COMPLETE SEPARATION CHECKER */
 
 proc freq data = asos_data order=data;
