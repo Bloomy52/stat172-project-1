@@ -184,3 +184,22 @@ If you want January as the reference instead, use:
 class month_name(ref='January') / param=reference order=data;
 ```
 
+### Grabbing Descriptive Statistics for the Dataset
+Commit: [104f06b](https://github.com/Bloomy52/stat172-project-1/commit/104f06b6a067d342d76f50fd50640343535d3bd3)
+Prompt:
+```markdown
+I need you to grab me descriptive statistics for the dataset similar to what you would find when using describe() in Python. I need you to organize the code by season and then give me the code so I can use those descriptive statistics. Set the limit to where the precipitation measured is greater than or equal to 0.01 inches.
+```
+And it gave me:
+```markdown
+You can use the following SAS code to calculate descriptive statistics for your dataset, organized by season, and filtered to include only days where precipitation is greater than or equal to 0.01 inches.
+```
+```sas
+/* Seasonal statistics for days with measurable precipitation */
+proc means data=asos_data
+    n mean std min q1 median q3 max maxdec=4;
+    where precip_bin = 1;
+    class season;
+    var max_dewpoint_f precip_in avg_wind_speed_kts max_rh;
+run;
+```
