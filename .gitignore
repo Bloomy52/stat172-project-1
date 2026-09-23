@@ -1,0 +1,15 @@
+# .gitignore for STAT 172 Project 1 
+
+# Ignore Markdown to PDF Script Materials
+node_modules/
+
+
+# Ignore PDFs
+*.PDF
+
+# Ignore PowerPoint File
+*.pptx
+
+# Model Interpretation File
+Model Interpretations.md
+extra insights.md
