@@ -1,5 +1,5 @@
 # STAT 172 Project 1
-This is the codebase for my STAT 172 Project.
+This is the codebase for our STAT 172 Project.
 
 ## Dataset
 This dataset uses Meterorlogical Data collected from ASOS by Iowa State University from January 1st, 2021 to December 31st, 2025. The dataset has the following structure:
@@ -28,13 +28,14 @@ The binary variable is going to be used for the prediction of `precip_in` and is
 ```math
 y = \begin{cases} 1 & \text{if } precip\_in \geq 0.01 \\ 0 & \text{otherwise} \end{cases}
 ```
+This will be named `precip_bin` which can have a value of 0 or 1 as defined above
 
 ### Categorical Variable
-The categorical variable being used is the month of the year, `month_name`, which is derived from the `day` variable.
+The categorical variable being used is the month of the year, `season`, which is derived from the `day` variable.
 
 ## AI Usage & Disclosure
 AI Usage is documented in the [AI Use Documentation](AI_use_documentation.md) file.\
-Also, AI Disclosure is documented in `git commit` messages found in the `git log`s.
+Also, AI Disclosure is documented in `git commit` messages found in the `git log`s with the `Assisted-by: <tool>` trailer.
 
 ### Disclosure Script
 Want to run the disclosure script yourself? You can run the following command in your terminal to see the AI usage and disclosure for this project:\
